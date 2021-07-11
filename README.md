@@ -1,6 +1,6 @@
 # algos_shop
 
-To start the frontend, clone the repo and run 
+To start the frontend, clone the repo, cd into the repo, and run 
 ```
 npm run start
 ```
