@@ -1,56 +1,24 @@
 import React from 'react'
 
-const Rating = ({ value, text }) => {
+export const Rating = ({ value, text }) => {
+    const stars = [];
+    for (var i = 0; i < 5; i++) {
+      if (value - i >= 1) {
+        stars.push(<i className="fas fa-star"></i>);
+      } else if (value - i > 0 && value - i < 1) {
+        stars.push(<i className="fas fa-star-half-alt"></i>);
+      } else {
+        stars.push(<i className="far fa-star"></i>);
+      }
+    }
     return (
-        <div className='rating'>
-            <span>
-                <i className={
-                value >= 1
-                ? 'fas fa-star'
-                : value >= 0.5
-                ? 'fas fa-star-half-alt'
-                : 'fas fa-star'
-             }></i>
-            </span>
-            <span>
-                <i className={
-                value >= 2
-                ? 'fas fa-star'
-                : value >= 1.5
-                ? 'fas fa-star-half-alt'
-                : 'fas fa-star'
-             }></i>
-            </span>
-            <span>
-                <i className={
-                value >= 3
-                ? 'fas fa-star'
-                : value >= 2.5
-                ? 'fas fa-star-half-alt'
-                : 'fas fa-star'
-             }></i>
-            </span>
-            <span>
-                <i className={
-                value >= 4
-                ? 'fas fa-star'
-                : value >= 3.5
-                ? 'fas fa-star-half-alt'
-                : 'fas fa-star'
-             }></i>
-            </span>
-            <span>
-                <i className={
-                value >= 5
-                ? 'fas fa-star'
-                : value >= 4.5
-                ? 'fas fa-star-half-alt'
-                : 'fas fa-star'
-             }></i>
-            </span>
-            <span>{ text && text }</span>
-        </div>
+      <div className="rating">
+        {stars.map((star) => (
+          <span>{star}</span>
+        ))}
+        <span>{text && text}</span>
+      </div>
     )
-}
+  }
 
-export default Rating
+  export default Rating
