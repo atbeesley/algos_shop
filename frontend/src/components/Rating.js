@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export const Rating = ({ value, text }) => {
     const stars = [];
@@ -19,6 +20,11 @@ export const Rating = ({ value, text }) => {
         <span>{text && text}</span>
       </div>
     )
+  }
+
+Rating.propTypes = {
+    value: PropTypes.number.isRequired,   
+    text: PropTypes.string.isRequired
   }
 
   export default Rating
