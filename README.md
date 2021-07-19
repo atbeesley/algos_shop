@@ -4,6 +4,20 @@ First, clone the repo and change directory into it.
 ```
 cd algos_shop
 ```
+# Backend setup
+
+To start the backend, first install its dependencies from the root of the repo 
+```
+npm i
+```
+To start the backend server with nodemon: 
+```
+npm run server
+```
+The API will be available on http://localhost:5000/api/products/.
+
+# Frontend setup
+
 To start the frontend, first change directory into the frontend directory 
 ```
 cd frontend
