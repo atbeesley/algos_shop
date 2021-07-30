@@ -14,7 +14,7 @@ To start the backend server with nodemon:
 ```
 npm run server
 ```
-The API will be available on http://localhost:5000/api/products/.
+You can make a GET request to the API at http://localhost:5000/api/products/ (using a REST client, such as Postman), and GET a particular product by appending its ID to this URI. 
 
 # Frontend setup
 
