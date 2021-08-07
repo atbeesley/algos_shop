@@ -10,12 +10,14 @@ const BasketScreen = ({ match, location, history }) => {
 
     const qty = location.search ? Number(location.search.split('=')[1]) : 1 
 
+    console.log('qty: ', qty)
+
     const dispatch = useDispatch()
 
     const basket = useSelector(state => state.basket)
     const { basketItems } = basket
 
-    console.log(basketItems)
+    console.log('basketItems: ', basketItems)
 
     useEffect(() => {
         if(productId){

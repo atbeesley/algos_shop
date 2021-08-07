@@ -2,7 +2,7 @@ import axios from 'axios'
 import { BASKET_ADD_ITEM } from '../constants/basketConstants'
 
 export const addToBasket = (id, qty) => async (dispatch, getState) => {
-    const { data } = axios.get(`api/products/${id}`)
+    const { data } = await axios.get(`api/products/${id}`)
     dispatch({
         type: BASKET_ADD_ITEM,
         payload: {
@@ -14,5 +14,5 @@ export const addToBasket = (id, qty) => async (dispatch, getState) => {
             qty
         }
     })
-    localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems))
+    localStorage.setItem('basketItems', JSON.stringify(getState().basket.basketItems))
 }
