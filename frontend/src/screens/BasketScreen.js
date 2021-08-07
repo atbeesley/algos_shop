@@ -26,9 +26,15 @@ const BasketScreen = ({ match, location, history }) => {
     }, [dispatch, productId, qty])
 
     return (
-        <div>
-            hi from BasketScreen
-        </div>
+       <Col md={8}>
+           <h1>Shopping Basket</h1>
+           {basketItems.length === 0 ? 
+           <Message>
+               Your basket is empty! 
+               <br />
+               <Link to='/'>Go back</Link>
+            </Message> : ('your basket is not empty')}
+       </Col>
     )
 }
 
