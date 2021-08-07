@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/products', productRoutes)
+app.use('/basket/api/products', productRoutes)
 app.use('/api/users', userRoutes)
 
 app.use((req, res, next)=> {
