@@ -79,7 +79,7 @@ const BasketScreen = ({ match, location, history }) => {
                                 <Button 
                                       type='button' 
                                       variant='light' 
-                                      onClick={() => removeFromBasketHandler(item.handler)}
+                                      onClick={() => removeFromBasketHandler(item.product)}
                                    >
                                        <i className='fas fa-trash'></i>
                                 </Button>
