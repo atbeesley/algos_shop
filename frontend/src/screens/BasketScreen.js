@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import Message from '../components/Message'
 import { Link } from 'react-router-dom'
 import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
-import { addToBasket } from '../actions/basketActions'
+import { addToBasket, removeFromBasket } from '../actions/basketActions'
 
 const BasketScreen = ({ match, location, history }) => {
     const productId = match.params.id
@@ -20,7 +20,8 @@ const BasketScreen = ({ match, location, history }) => {
     console.log('basketItems: ', basketItems)
 
     const removeFromBasketHandler = (id) => {
-        console.log('remove')
+        console.log('removing from the basket: ', id)
+        dispatch(removeFromBasket(id))
     }
 
     const checkoutHandler = (id) => {
