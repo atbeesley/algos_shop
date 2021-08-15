@@ -24,25 +24,25 @@ const authUser = asyncHandler(async (req, res) => {
     }
 })
 
-// @desc Fetch all users
-// @route GET /api/users
-// @access Public
-const getUsers = asyncHandler(async (req, res) => {
-    const users = await User.find({})
-    res.json(users)
-})
+// @desc Get user profile 
+// @route GET /api/users/login
+// @access Private
+const getUserProfile = asyncHandler(async (req, res) => {
+    
+    const user = await User.findById(req.user._id)
 
-// @desc Fetch a user by ID
-// @route GET /api/users/:id
-// @access Public
-const getUserById = asyncHandler(async (req, res) => {
-    const user = await user.findById(req.params.id)
     if(user){
-        res.json(user)
+        res.json({
+            _id: user.id,
+            name: user.name,
+            email: user.email,
+            isAdmin: user.isAdmin,
+            token: generateToken(user._id)
+        })
     } else {
         res.status(404)
         throw new Error('User not found')
     }
 })
 
-export { getUsers, getUserById, authUser }
+export { authUser, getUserProfile }
