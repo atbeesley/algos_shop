@@ -10,6 +10,15 @@ To run Algos in your local environment, first clone the repo to a directory of y
 ```
 cd algos_shop
 ```
+Create a file called ".env" here, and copy the following into it:
+```
+NODE_ENV = development 
+PORT = 5000
+MONGO_URI = 
+JWT_SECRET = 123456
+```
+For the Mongo URI, use the URI to connect to your MongoDB (either running in your local environment or in MongoDB Atlas - be sure to have one of these options set up). 
+
 ## Backend setup
 
 To start the backend, first install its dependencies from the root of the repo 
