@@ -14,10 +14,10 @@ Create a file called ".env" here, and copy the following into it:
 ```
 NODE_ENV = development 
 PORT = 5000
-MONGO_URI = 
+MONGO_URI = **your mongoDB URI**
 JWT_SECRET = 123456
 ```
-For the Mongo URI, use the URI to connect to your MongoDB (either running in your local environment or in MongoDB Atlas - be sure to have one of these options set up). 
+For the Mongo URI, set its value to the URI you use to connect to your MongoDB (either running in your local environment or in MongoDB Atlas - be sure to have one of these options set up beforehand if you have not already done so). 
 
 ## Backend setup
 
