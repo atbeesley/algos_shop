@@ -46,3 +46,17 @@ then run the frontend:
 npm run start
 ```
 The frontend will be running on http://localhost:3000/.
+
+## Data insertion and deletion
+
+There are scripts included to insert and delete data into the database. These scripts work with whatever data there is (in JSON format) in the seeder file, located in the root of the backend directory. 
+
+To insert the data in this file into the database, run the following command from the root of the project
+``` 
+npm run data:import
+```
+To delete whatever data there is in your database, run the following command from the root of the project
+```
+npm run data:destroy
+```
+NB: Since the inserts are connected to your database file, you will need to have set up your database connection with a .env file as mentioned in the *intial setup* section above. 
