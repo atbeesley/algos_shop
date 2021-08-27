@@ -47,6 +47,13 @@ npm run start
 ```
 The frontend will be running on http://localhost:3000/.
 
+## Development 
+
+You can run both the backend and frontend together concurrently using the following command:
+```
+npm run dev
+```
+
 ## Data insertion and deletion
 
 There are scripts included to insert and delete data into the database. These scripts work with whatever data there is (in JSON format) in the seeder file, located in the root of the backend directory. 
@@ -59,4 +66,6 @@ To delete whatever data there is in your database, run the following command fro
 ```
 npm run data:destroy
 ```
-NB: Since the inserts are connected to your database file, you will need to have set up your database connection with a .env file as mentioned in the *intial setup* section above. 
+NB #1: Since the inserts are connected to your database file, you will need to have set up your database connection with a .env file as mentioned in the *intial setup* section above. 
+
+NB #2: You will have to refresh your browser while running the frontend to see the data populate the application after inserting the data (for example, if you running the development command in a different terminal tab, e.g. by running *npm run dev* as mentioned above). 
