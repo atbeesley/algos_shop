@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './bootstrap.min.css'
 import { Container } from 'react-bootstrap'
 import RegisterScreen from './screens/RegisterScreen'
+import ProfileScreen from './screens/ProfileScreen'
 
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
         <Route path='/basket/:id?' component={BasketScreen} />
         <Route path='/login' component={LoginScreen} />
         <Route path='/register' component={RegisterScreen} />
+        <Route path='/profile' component={ProfileScreen} />
       </Container>
     </main>
     <Footer />

@@ -6,7 +6,8 @@ import { basketReducer } from './reducers/basketReducers'
 import { 
     userLoginReducer, 
     userRegisterReducer,
-    userDetailsReducer
+    userDetailsReducer,
+    userUpdateProfileReducer
  } from './reducers/userReducers'
 
 const reducer = combineReducers({
@@ -15,7 +16,8 @@ const reducer = combineReducers({
     basket: basketReducer,
     userLogin: userLoginReducer,
     userRegister: userRegisterReducer,
-    userDetails: userDetailsReducer
+    userDetails: userDetailsReducer,
+    userUpdateProfile: userUpdateProfileReducer
 })
 const basketItemsFromStorage = localStorage.getItem('basketItems') ? 
     JSON.parse(localStorage.getItem('basketItems')) : []
