@@ -21,8 +21,7 @@ const ProfileScreen = ({ location, history }) => {
     const { userInfo } = userLogin
 
     const userUpdateProfile = useSelector((state) => state.userUpdateProfile)
-
-    const { success } = getUserDetails
+    const { success } = userUpdateProfile
 
     useEffect(() => {
         if(!userInfo) {
@@ -52,7 +51,7 @@ const ProfileScreen = ({ location, history }) => {
             <h2>User Profile</h2>
             {message && <Message variant='danger'>{message}</Message>}
             {error && <Message variant='danger'>{error}</Message>}
-            {error && <Message variant='success'>Changes saved</Message>}
+            {success && <Message variant='success'>{success}</Message>}
             {loading && <Loader />}
             <Form onSubmit={submitHandler}>
             <Form.Group controlId='name'>
