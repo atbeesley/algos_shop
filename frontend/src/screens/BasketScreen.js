@@ -107,7 +107,7 @@ const BasketScreen = ({ match, location, history }) => {
                                                           disabled={basketItems.length === 0}
                                                           onClick={checkoutHandler}
                                                       >
-                                                      Proceed to checkout!
+                                                      Proceed to checkout
                                                       </Button>
                                                   </ListGroup.Item>
                                           </ListGroup>
