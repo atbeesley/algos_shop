@@ -2,8 +2,6 @@
 
 Algos is a full-stack  e-commerce application, built using React for the frontend, Node and Express for the backend, and a cloud-native MongoDB for the database. It is based on the MERN stack ecommerce course from Udemy by Brad Traversy, but contains my own modifications, and I aim to include more features and functionality in the future, too.
 
-**"Algos takes care of it!"**
-
 ## Initial setup
 
 To run Algos in your local environment, first clone the repo to a directory of your choosing, and change directory into it.
