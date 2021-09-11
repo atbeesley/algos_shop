@@ -2,23 +2,31 @@ import React, {useState} from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import FormContainer from '../components/FormContainer'
+import { saveShippingAddress } from '../actions/basketActions'
 
 export const ShippingScreen = ({ history }) => {
-    const [address, setAddress] = useState('')
-    const [city, setCity] = useState('')
-    const [postcode, setPostcode] = useState('')
-    const [country, setCountry] = useState('')
+    const basket = useSelector(state => state.basket)
+    const { shippingAddress } = basket
+
+    const [address, setAddress] = useState(shippingAddress.address || "")
+    const [city, setCity] = useState(shippingAddress.city || "")
+    const [postcode, setPostcode] = useState(shippingAddress.postcode || "")
+    const [country, setCountry] = useState(shippingAddress.country || "")
+
+    const dispatch = useDispatch()
 
     const submitHandler = (e) => {
+        console.log('starting proceeding to payment page')
         e.preventDefault()
-        // history.push('/payment')
-        console.log('submit')
+        dispatch(saveShippingAddress({ address, city, postcode, country }))
+        history.push('/payment')
+        console.log('ending proceeding to payment page')
     }
 
     return (
         <FormContainer>
             <h1>Shipping</h1>
-            <Form onSubmit={submitHandler}></Form>
+            <Form onSubmit={submitHandler}>
             <Form.Group controlId='address'>
                     <Form.Label>Address</Form.Label>
                     <Form.Control 
@@ -62,6 +70,7 @@ export const ShippingScreen = ({ history }) => {
                 <Button type='submit' variant='primary'>
                     Continue
                 </Button>
+                </Form>
         </FormContainer>
     )
 }
