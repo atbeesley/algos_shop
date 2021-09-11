@@ -25,7 +25,7 @@ const BasketScreen = ({ match, location, history }) => {
     }
 
     const checkoutHandler = (id) => {
-        console.log('going to checkout')
+        history.push('/login?redirect=shipping')
     }
 
     useEffect(() => {
