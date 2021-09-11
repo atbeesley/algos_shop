@@ -1,5 +1,9 @@
 import axios from 'axios'
-import { BASKET_ADD_ITEM, BASKET_REMOVE_ITEM } from '../constants/basketConstants'
+import { 
+    BASKET_ADD_ITEM, 
+    BASKET_REMOVE_ITEM, 
+    BASKET_SAVE_SHIPPING_ADDRESS 
+} from '../constants/basketConstants'
 
 export const addToBasket = (id, qty) => async (dispatch, getState) => {
     const { data } = await axios.get(`api/products/${id}`)
@@ -23,4 +27,12 @@ export const removeFromBasket = (id) => (dispatch, getState) => {
         payload: id
     })
     localStorage.setItem('basketItems', JSON.stringify(getState().basket.basketItems))
+}
+
+export const saveShippingAddress = (data) => (dispatch) => {
+    dispatch({
+        type: BASKET_SAVE_SHIPPING_ADDRESS,
+        payload: data
+    })
+    localStorage.setItem('shippingAddress', JSON.stringify(data))
 }
