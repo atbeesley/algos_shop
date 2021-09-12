@@ -16,11 +16,9 @@ export const ShippingScreen = ({ history }) => {
     const dispatch = useDispatch()
 
     const submitHandler = (e) => {
-        console.log('starting proceeding to payment page')
         e.preventDefault()
         dispatch(saveShippingAddress({ address, city, postcode, country }))
         history.push('/payment')
-        console.log('ending proceeding to payment page')
     }
 
     return (
