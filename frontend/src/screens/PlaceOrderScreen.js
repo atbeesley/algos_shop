@@ -8,6 +8,10 @@ import CheckoutSteps from '../components/CheckoutSteps'
 const PlaceOrderScreen = () => {
     const basket = useSelector(state => state.basket) 
 
+const placeOrderHandler = () => {
+    console.log('order')
+}
+
     return (
     <>
          <CheckoutSteps step1 step2 step3 step4 />
@@ -60,6 +64,46 @@ const PlaceOrderScreen = () => {
                             )}
                      </ListGroup.Item>
                  </ListGroup>
+             </Col>
+             <Col md={4}>
+                 <Card>
+                     <ListGroup variant='flush'>
+                         <ListGroup.Item>
+                             <h2>Order Summary</h2>
+                         </ListGroup.Item>
+                         <ListGroup.Item>
+                             <Row>
+                                 <Col>Items</Col>
+                                 <Col>£{basket.itemsPrice}</Col>
+                             </Row>
+                         </ListGroup.Item>
+                         <ListGroup.Item>
+                             <Row>
+                                 <Col>Shipping</Col>
+                                 <Col>£{basket.shippingPrice}</Col>
+                             </Row>
+                         </ListGroup.Item>
+                         <ListGroup.Item>
+                             <Row>
+                                 <Col>Tax</Col>
+                                 <Col>£{basket.taxPrice}</Col>
+                             </Row>
+                         </ListGroup.Item>
+                         <ListGroup.Item>
+                             <Row>
+                                 <Col>Total</Col>
+                                 <Col>£{basket.totalPrice}</Col>
+                             </Row>
+                         </ListGroup.Item>
+                         <ListGroup.Item>
+                             <Button type='button' 
+                                     className='btn-block' 
+                                     disabled={basket.basketItems === 0} 
+                                     onClick={placeOrderHandler}
+                             ></Button>
+                         </ListGroup.Item>
+                     </ListGroup>
+                 </Card>
              </Col>
          </Row>
         </>
