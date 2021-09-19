@@ -5,6 +5,7 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { getUserDetails, updateUserProfile } from '../actions/userActions'
 import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
+import { load } from 'dotenv'
 
 const ProfileScreen = ({ location, history }) => {
     const [name, setName] = useState('')
@@ -16,7 +17,7 @@ const ProfileScreen = ({ location, history }) => {
     const dispatch = useDispatch()
 
     const userDetails = useSelector((state) => state.userDetails)
-    const { loading, error, user } = userDetails
+    let { loading, error, user } = userDetails
 
     const userLogin = useSelector((state) => state.userLogin)
     const { userInfo } = userLogin
@@ -39,12 +40,12 @@ const ProfileScreen = ({ location, history }) => {
     }, [dispatch, history, userInfo, user, success])
 
     const submitHandler = (e) => {
-        //e.preventDefault()
+        e.preventDefault()
         if(password !== confirmPassword){
-            e.preventDefault()
             setMessage('The passwords do not match.')
         } else {
             dispatch(updateUserProfile({ id: user._id, name, email, password }))
+            window.location.reload()
         }
     }
      
