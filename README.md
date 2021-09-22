@@ -1,6 +1,6 @@
 # Algos Shop
 
-Algos is a full-stack  e-commerce application, built using React for the frontend, Node and Express for the backend, and a cloud-native MongoDB for the database. It is based on the MERN stack ecommerce course from Udemy by Brad Traversy, but contains my own modifications, and I aim to include more features and functionality in the future, too.
+Algos is a full-stack  e-commerce application, built using React for the frontend, Node and Express for the backend, and a MongoDB for the database. It is based on the MERN stack ecommerce course from Udemy by Brad Traversy, but contains my own modifications, and I aim to include more features and functionality in the future, too.
 
 ## Initial setup
 
@@ -64,6 +64,6 @@ To delete whatever data there is in your database, run the following command fro
 ```
 npm run data:destroy
 ```
-NB #1: Since the inserts are connected to your database file, you will need to have set up your database connection with a .env file as mentioned in the *intial setup* section above. 
+NB: Since the inserts are connected to your database file, you will need to have set up your database connection with a .env file as mentioned in the *intial setup* section above. 
 
-NB #2: You will have to refresh your browser while running the frontend to see the data populate the application after inserting the data (for example, if you running the development command in a different terminal tab, e.g. by running *npm run dev* as mentioned above). 
+Also: You will have to refresh your browser while running the frontend to see the data populate the application after inserting the data (for example, if you running the development command in a different terminal tab, e.g. by running *npm run dev* as mentioned above). 
