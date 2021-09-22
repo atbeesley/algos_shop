@@ -8,6 +8,25 @@ import CheckoutSteps from '../components/CheckoutSteps'
 const PlaceOrderScreen = () => {
     const basket = useSelector(state => state.basket) 
 
+    const addDecimals = (num) => {
+        return (Math.round(num * 100) / 100).toFixed(2)
+    }
+
+    basket.itemsPrice = 
+        addDecimals(basket.basketItems.reduce((acc, item) => acc + item.price * item.qty, 0))
+
+    basket.shippingPrice = 
+        addDecimals(basket.itemsPrice > 100 ? 0 : 100)
+
+    basket.taxPrice = 
+        addDecimals(Number((0.175 * basket.itemsPrice).toFixed(2)))
+
+    basket.totalPrice = (
+        Number(basket.itemsPrice) + 
+        Number(basket.shippingPrice) + 
+        Number(basket.taxPrice)
+    ).toFixed(2)
+
 const placeOrderHandler = () => {
     console.log('order')
 }
@@ -85,7 +104,7 @@ const placeOrderHandler = () => {
                          </ListGroup.Item>
                          <ListGroup.Item>
                              <Row>
-                                 <Col>Tax</Col>
+                                 <Col>VAT</Col>
                                  <Col>£{basket.taxPrice}</Col>
                              </Row>
                          </ListGroup.Item>
