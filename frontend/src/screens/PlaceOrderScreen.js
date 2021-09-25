@@ -144,7 +144,7 @@ const placeOrderHandler = () => {
                                      className='btn-block' 
                                      disabled={basket.basketItems === 0} 
                                      onClick={placeOrderHandler}
-                             ></Button>
+                             >Place Order</Button>
                          </ListGroup.Item>
                      </ListGroup>
                  </Card>
