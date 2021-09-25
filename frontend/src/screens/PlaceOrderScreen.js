@@ -4,8 +4,11 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from './../components/Message'
 import CheckoutSteps from '../components/CheckoutSteps'
+import { createOrder } from '../actions/orderActions'
 
 const PlaceOrderScreen = () => {
+    const dispatch = useDispatch()
+
     const basket = useSelector(state => state.basket) 
 
     const addDecimals = (num) => {
@@ -28,7 +31,15 @@ const PlaceOrderScreen = () => {
     ).toFixed(2)
 
 const placeOrderHandler = () => {
-    console.log('order')
+    dispatch(createOrder({
+        orderItems: basket.orderItems,
+        shippingAdress: basket.shippingAddress,
+        paymentMethod: basket.paymentMethod,
+        itemsPrice: basket.itemsPrice,
+        shippingPrice: basket.shippingPrice,
+        taxPrice: basket.taxPrice,
+        totalPrice: basket.totalPrice
+    }))
 }
 
     return (
