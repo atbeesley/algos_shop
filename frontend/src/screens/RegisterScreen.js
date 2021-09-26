@@ -33,6 +33,7 @@ const RegisterScreen = ({ location, history }) => {
         } else {
         dispatch(register(name, email, password))
         }
+        history.push('')
     }
 
     return (
