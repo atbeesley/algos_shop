@@ -34,6 +34,7 @@ const RegisterScreen = ({ location, history }) => {
         dispatch(register(name, email, password))
         }
         history.push('')
+        window.location.reload()
     }
 
     return (
