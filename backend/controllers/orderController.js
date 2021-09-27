@@ -15,13 +15,16 @@ const addOrderItems = asyncHandler(async (req, res) => {
         totalPrice
     } = req.body
 
+    console.log('orderItems: ', req.body.orderItems)
+
     if(orderItems && orderItems === 0){
         res.status(400)
         throw new Error('No order items')
+
     } else {
         const order = new Order({
-            user:req.user._id,
             orderItems, 
+            user: req.user._id,
             shippingAddress, 
             paymentMethod, 
             itemsPrice, 
