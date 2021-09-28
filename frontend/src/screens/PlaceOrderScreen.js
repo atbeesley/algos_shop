@@ -43,8 +43,8 @@ useEffect(() => {
 const placeOrderHandler = () => {
     dispatch(
         createOrder({
-            orderItems: basket.orderItems,
-            shippingAdress: basket.shippingAddress,
+            orderItems: JSON.parse(localStorage.getItem('basketItems')),
+            shippingAdress: JSON.parse(localStorage.getItem('shippingAddress')),
             paymentMethod: basket.paymentMethod,
             itemsPrice: basket.itemsPrice,
             shippingPrice: basket.shippingPrice,

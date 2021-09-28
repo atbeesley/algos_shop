@@ -16,6 +16,7 @@ const addOrderItems = asyncHandler(async (req, res) => {
     } = req.body
 
     console.log('orderItems: ', req.body.orderItems)
+    console.log('shippingAddress: ', req.body.shippingAddress)
 
     if(orderItems && orderItems === 0){
         res.status(400)
