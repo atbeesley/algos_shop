@@ -45,7 +45,7 @@ const placeOrderHandler = () => {
     dispatch(
         createOrder({
             orderItems: basket.orderItems,
-            shippingAdress: basket.shippingAddress,
+            shippingAddress: basket.shippingAddress,
             paymentMethod: basket.paymentMethod,
             itemsPrice: basket.itemsPrice,
             shippingPrice: basket.shippingPrice,
