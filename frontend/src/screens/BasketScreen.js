@@ -37,7 +37,7 @@ const BasketScreen = ({ match, location, history }) => {
     return (
         <Row>
        <Col md={8}>
-           <h1>Shopping Basket</h1>
+           <h1>Your Basket</h1>
            {basketItems.length === 0 ? (
            <Message>
                Your basket is empty! 
