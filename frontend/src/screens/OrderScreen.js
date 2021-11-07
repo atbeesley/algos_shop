@@ -53,7 +53,11 @@ useEffect(() => {
                      <ListGroup.Item>
                          <h2>Order Items</h2>
                          {order.orderItems.length === 0 ? (
-                            <Message>Your order is empty!</Message>) : (
+                            <Message>
+                                <h1>Snap!</h1>
+                                <p>Your order is empty.</p>
+                                <p>Go <Link to="/">home</Link> to view our products.</p>
+                                </Message>) : (
                             <ListGroup variant="flush">
                                 {order.orderItems.map((item, index) => (
                                     <ListGroup.Item key={index}>
