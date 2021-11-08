@@ -30,7 +30,7 @@ useEffect(() => {
     return loading ? <Loader/> : error ? <Message variant='danger'>{error}</
     Message> : <>
         <h1>Success!</h1>
-        <p>Order number {order._id} is now being packed up and sent out to you.</p>
+        <p>Here's a summary of your order (number {order._id}).</p>
         <Row>
              <Col md={8}>
                  <ListGroup variant="flush">
